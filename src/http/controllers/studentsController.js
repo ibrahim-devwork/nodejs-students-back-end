@@ -29,11 +29,11 @@ const getAllStudents = async (request, response, next) => {
             }
         });
 
-        response.status(200).json({
-            students: docs,
-            totalPages: pages,
-            totalCount: total,
-        });
+        response.status(200).json([{
+            students : docs,
+            totalPage: pages,
+            totalCount: total
+        }]);
 
     } catch(error) {
         console.log(error.message)
